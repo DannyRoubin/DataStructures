@@ -68,7 +68,6 @@ public class ArrayList {
             for (int i = 0; i < numElements; i++) {
                 newObj[i] = obj[i];
             }
-            System.out.println("WE making a new one!");
             this.obj = newObj; 
         } else {
         }
@@ -80,7 +79,6 @@ public class ArrayList {
             for (int i = 0; i < numElements; i++) {
                 newObj[i] = obj[i];
             }
-            System.out.println("WE making a new one!");
             this.obj = newObj; 
     }
     
@@ -116,6 +114,15 @@ public class ArrayList {
         } else {
             return false;
         }
+    }
+
+    public boolean contains(Object nObj) {
+        for (int i = 0; i < obj.length; i++) {
+            if (obj[i] == nObj) {
+                return true;
+            } 
+        }
+        return false;
     }
 
     // gets numElements

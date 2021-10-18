@@ -11,74 +11,88 @@ public class ArrayBasedDataStructuresDriver {
 	}
 
 	private static void arrayListTests() {
-		// System.out.println("ArrayList Tests");
-		// // todo: make more tests here
-		// ArrayList a = new ArrayList();
-		// System.out.println("Check empty array isEmpty:" + a.isEmpty());
-		// a.insert('B', 0);
-		// a.insert('a', 0);
-		// a.insert('t', 1);
-		// System.out.println("Check non-empty array isEmpty:" + a.isEmpty());
-		// System.out.println(a.toString());
-		// while (a.isEmpty() == false) {
-		// 	System.out.println(a.remove(0));
-		// }
+		System.out.println("ArrayList Tests");
+		System.out.println("-----------------------------------------------");
+		// todo: make more tests here
+		ArrayList a = new ArrayList();
+		System.out.println("Check empty array isEmpty:" + a.isEmpty());
+		a.insert('B', 0);
+		a.insert('a', 0);
+		a.insert('t', 1);
+		System.out.println("Check non-empty array isEmpty:" + a.isEmpty());
+		System.out.println(a.toString());
+		while (a.isEmpty() == false) {
+			System.out.println(a.remove(0));
+		}
 			
-		// // Fill over initial capacity and check that it grows
-		// for (int i = 0; i < 110; i++)
-		// {
-		// 	a.lengthCheck();
-		// 	a.append(new Integer(i));
-		// }
-		// System.out.println("Size of array after 110 adds: "+ a.size());
-		// System.out.println("Value of last element: "+ a.get(a.size()-1));
-		// System.out.println("Insert past end of list");
-		// a.insert('z', 200);
-		// // System.out.println("Insert negative index");
-		// // a.insert('z',  -3);
-		// System.out.println(a.toString());
-		// System.out.println(a.get(200));
-		// System.out.println("Remove past end of list");
-		// a.remove(200);
-		// System.out.println(a.toString());
+		// Fill over initial capacity and check that it grows
+		for (int i = 0; i < 110; i++)
+		{
+			a.lengthCheck();
+			a.append(new Integer(i));
+		}
+		System.out.println("Size of array after 110 adds: "+ a.size());
+		System.out.println("Value of last element: "+ a.get(a.size()-1));
+		System.out.println("Insert past end of list");
+		a.insert('z', 200);
+		// System.out.println("Insert negative index");
+		// a.insert('z',  -3);
+		System.out.println(a.toString());
+		System.out.println(a.get(200));
+		System.out.println("Remove past end of list");
+		a.remove(200);
+		System.out.println(a.toString());
 
 		// -----------------------------------------------------------------
 		// ADDITIONAL TESTS
 		
 		// Check for equality
+		System.out.println("equality test");
+		System.out.println("-----------------------------------------------");
 		ArrayList list1 = new ArrayList();
 		ArrayList list2 = new ArrayList();
 		
-		// list1.insert("A", 0);
-		// list1.insert("B", 0);
-		// list1.insert("C", 0);
-		// list2.insert("A", 0);
-		// list2.insert("B", 0);
-		// list2.insert("C", 0); 
+		list1.insert("A", 0);
+		list1.insert("B", 0);
+		list1.insert("C", 0);
+		list2.insert("A", 0);
+		list2.insert("B", 0);
+		list2.insert("C", 0); 
 
-		// System.out.println("list 1: " + list1.toString());
-		// System.out.println("list 2: " + list2.toString());
-		// System.out.println("equality true check: " + list1.equals(list2));
-		// list2.remove(1);
-		// list2.insert("D", 0);
-		// System.out.println("list 1: " + list1.toString());
-		// System.out.println("list 2: " + list2.toString());
-		// System.out.println("equality false check: " + list1.equals(list2));
+		System.out.println("list 1: " + list1.toString());
+		System.out.println("list 2: " + list2.toString());
+		System.out.println("equality true check: " + list1.equals(list2));
+		list2.remove(1);
+		list2.insert("D", 0);
+		System.out.println("list 1: " + list1.toString());
+		System.out.println("list 2: " + list2.toString());
+		System.out.println("equality false check: " + list1.equals(list2));
 		
-		// System.out.println("index of, expecting 1: " + list1.getIndexOf("B"));
-		// System.out.println("index of, expecting -1: " + list1.getIndexOf("J"));
-		// System.out.println("get, expecting A: " + list1.get(2));
-		// System.out.println("get, expecting error: ");
-		// System.out.println(list1.get(9));
-		// System.out.println("size, expecting 3: " + list1.size());
-		// System.out.println("remove return value, expecting A: " + list1.remove(2));
+		System.out.println("index of, expecting 1: " + list1.getIndexOf("B"));
+		System.out.println("index of, expecting -1: " + list1.getIndexOf("J"));
+		System.out.println("get, expecting A: " + list1.get(2));
+		System.out.println("get, expecting error: ");
+		System.out.println(list1.get(9));
+		System.out.println("size, expecting 3: " + list1.size());
+		System.out.println("remove return value, expecting A: " + list1.remove(2));
 		
 		// Contains test
+		System.out.println("Contains test");
+		System.out.println("-----------------------------------------------");
 		boolean b = list1.contains(list1.contains("B"));
 		System.out.println("contains, expecting true: " + list1.contains(("B")));
 		System.out.println("contains, expecting false: " + list1.contains(("Z")));
 		
+		System.out.println("Append test");
+		System.out.println("-----------------------------------------------");
 		// Append test??
+
+		System.out.println("list 1 prior to appending: " +list1.toString());
+		list1.append("F");
+		list1.append("G");
+		list1.append("H");
+		list1.append("I");
+		System.out.println("list 1 post append expecting 'C B F G H I':  " +list1.toString());
 		
 		
 	}
