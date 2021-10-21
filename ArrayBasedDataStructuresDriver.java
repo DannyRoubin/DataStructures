@@ -4,8 +4,8 @@
 
 public class ArrayBasedDataStructuresDriver {
 	public static void main(String[] args) {
-		arrayListTests();
-		// queueTests();
+		// arrayListTests();
+		queueTests();
 		// stackTests();	
 		
 	}
@@ -22,6 +22,7 @@ public class ArrayBasedDataStructuresDriver {
 		System.out.println("Check non-empty array isEmpty:" + a.isEmpty());
 		System.out.println(a.toString());
 		while (a.isEmpty() == false) {
+			System.out.println("here is a being removed: " + a.toString());
 			System.out.println(a.remove(0));
 		}
 			
@@ -35,10 +36,9 @@ public class ArrayBasedDataStructuresDriver {
 		System.out.println("Value of last element: "+ a.get(a.size()-1));
 		System.out.println("Insert past end of list");
 		a.insert('z', 200);
-		// System.out.println("Insert negative index");
-		// a.insert('z',  -3);
+		System.out.println("Insert negative index");
+		a.insert('z',  -3);
 		System.out.println(a.toString());
-		System.out.println(a.get(200));
 		System.out.println("Remove past end of list");
 		a.remove(200);
 		System.out.println(a.toString());
@@ -97,26 +97,26 @@ public class ArrayBasedDataStructuresDriver {
 		
 	}
 
-	// private static void queueTests() {
-	// 	System.out.println("\nQueue Tests");
+	private static void queueTests() {
+		System.out.println("\nQueue Tests");
 
-	// 	Queue a = new Queue();
-	// 	System.out.println("dequeue empty q");
-	// 	a.dequeue();
-	// 	a.enqueue('B');
-	// 	a.enqueue('a');
-	// 	a.enqueue('t');
-	// 	System.out.println(a.toString());
-	// 	while (a.isEmpty() == false) {
-	// 		System.out.println(a.dequeue());
-	// 	}
-	// 	System.out.println("Fill past initial size");
-	// 	for (int i = 0; i < 110; i++)
-	// 	{
-	// 		a.enqueue(new Integer(i));
-	// 	}
-	// 	System.out.println("size: "+ a.size());
-	// }
+		Queue a = new Queue();
+		System.out.println("dequeue empty q");
+		a.dequeue();
+		a.enqueue('B');
+		a.enqueue('a');
+		a.enqueue('t');
+		System.out.println(a.toString());
+		while (a.isEmpty() == false) {
+			System.out.println(a.dequeue());
+		}
+		System.out.println("Fill past initial size");
+		for (int i = 0; i < 110; i++)
+		{
+			a.enqueue(new Integer(i));
+		}
+		System.out.println("size: "+ a.size());
+	}
 
 	// private static void stackTests() {
 	// 	System.out.println("\nStack Tests");

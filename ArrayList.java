@@ -15,9 +15,11 @@ public class ArrayList {
     }
 
     public void insert(Object nObj, int index) {
-        while(index + 1 >obj.length) {
-            forceIncrease();
-        }
+        if(index + 1 >obj.length) {
+           System.out.println("Index is out of bounds");
+        } else if(index < 0) {
+            System.out.println("Index cannot be negative");
+        } else {
         lengthCheck();
         numElements++;
         for (int i = numElements - 1; i > index; i--) {
@@ -29,6 +31,7 @@ public class ArrayList {
         }
         obj[index] = nObj;
     }
+    }
 
 
     // append method to add a new object to the end of the list
@@ -37,10 +40,18 @@ public class ArrayList {
     }
 
     public Object remove(int index) {
+        if(index + 1 >obj.length) {
+            System.out.println("Index is out of bounds");
+            return -1;
+         } else if(index < 0) {
+             System.out.println("Index cannot be negative");
+             return -1;
+         } else {
         Object holder = obj[index];
         obj[index] = null;
         numElements--;
         return holder;
+        }
     }
 
     // get method to return the object at the given index
