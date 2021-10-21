@@ -1,19 +1,31 @@
 public class Queue {
-    private int[] data = new int[100];
-    private int front = 0;
-    private int back = 0;
+    private Object[] data;
+    private Object front = 0;
+    private Object back = 0;
+    private int size = 0;
 
 
-    public void enqueue (int val) {
+     Queue(int size) {
+        this.size = size;
+        data = new int[size];
+    }
+
+
+    public void enqueue (Object val) {
         data[back++] = val;
     }
 
-    public int dequeue () {
+    public Object dequeue () {
         return data[front++];
     }
 
     public boolean isEmpty () {
-        // if (count)
+    for (int i = 0; i < size; i++) {
+        if (data[i] == null) {
+            return false;
+        }
+    }
+    return true;
     }
 
     public String toString () {
