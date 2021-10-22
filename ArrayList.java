@@ -1,3 +1,11 @@
+/*
+Name: Danny Roubin
+Class: CSS 143 Sec B
+Assignment: Data Structures assignment
+
+Purpose of this file/class is to be an array list 
+that is capable of taking in any object
+*/
 public class ArrayList {
     private int numElements = 0;
     private int arrayLength;
@@ -9,11 +17,14 @@ public class ArrayList {
         obj = new Object[size];
     }
 
+    // constructor that auto sets the size of the 
+    // array list to 10 as the default value
     ArrayList() {
         arrayLength = 10;
         obj = new Object[arrayLength];
     }
 
+    // inserts a value at the specified index and shifts existing values as needed.
     public void insert(Object nObj, int index) {
         if(index + 1 >obj.length) {
            System.out.println("Index is out of bounds");
@@ -39,6 +50,7 @@ public class ArrayList {
         obj[numElements++] = nObj;
     }
 
+    // removes a specified index and shifts values over appropriately
     public Object remove(int index) {
         if(index + 1 >obj.length) {
             System.out.println("Index is out of bounds");
@@ -85,6 +97,7 @@ public class ArrayList {
 
     }
 
+    // method to force increase the size of the array, most likely will not be needed, but can be helpful
     public void forceIncrease() {
         Object[] newObj = new Object[(obj.length * 2)];
             for (int i = 0; i < numElements; i++) {
@@ -93,7 +106,7 @@ public class ArrayList {
             this.obj = newObj; 
     }
     
-
+// checks if the arraylist is empty
     public boolean isEmpty() {
         if (numElements < 1) {
             return true;
@@ -102,6 +115,8 @@ public class ArrayList {
         }
     }
 
+    // finds the first occurrence of an object in the array, returns -1 if not found, if found returns
+    // returns the index at which the first occurrence was found
     public int getIndexOf(Object nObj) {
         int tracker = -1;
         for (int i = 0; i < obj.length; i++) {
@@ -113,6 +128,7 @@ public class ArrayList {
         return tracker;
     }
 
+    // checks if two arraylists are equal to each other, returns boolean value
     public boolean equals(ArrayList that) {
         Object[] nObj = that.obj;
         if (obj.length == nObj.length) {
@@ -127,6 +143,8 @@ public class ArrayList {
         }
     }
 
+    // simplified version of getIndexOf() where this one checks if the specified object
+    // lives in the array, and if yes, return boolean value
     public boolean contains(Object nObj) {
         for (int i = 0; i < obj.length; i++) {
             if (obj[i] == nObj) {

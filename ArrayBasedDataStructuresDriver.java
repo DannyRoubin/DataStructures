@@ -1,19 +1,28 @@
+/*
+Name: Danny Roubin
+Class: CSS 143 Sec B
+Assignment: Data Structures assignment
+
+Purpose of this file/class is simply to be the driver.
+it handles taking in data and using methods from other classes to sort through the data
+*/
+
 
 /**Incomplete Driver for ArrayList(ObjectList),Stack and Queue***/
 // Lesley's version - has some extra ArrayList tests
 
 public class ArrayBasedDataStructuresDriver {
+	// Uncomment each of the methods whenever you are ready to run each test
 	public static void main(String[] args) {
 		// arrayListTests();
-		queueTests();
-		// stackTests();	
+		// queueTests();
+		stackTests();	
 		
 	}
 
 	private static void arrayListTests() {
 		System.out.println("ArrayList Tests");
 		System.out.println("-----------------------------------------------");
-		// todo: make more tests here
 		ArrayList a = new ArrayList();
 		System.out.println("Check empty array isEmpty:" + a.isEmpty());
 		a.insert('B', 0);
@@ -85,7 +94,7 @@ public class ArrayBasedDataStructuresDriver {
 		
 		System.out.println("Append test");
 		System.out.println("-----------------------------------------------");
-		// Append test??
+		// Append test
 
 		System.out.println("list 1 prior to appending: " +list1.toString());
 		list1.append("F");
@@ -97,6 +106,7 @@ public class ArrayBasedDataStructuresDriver {
 		
 	}
 
+	// queue test section 
 	private static void queueTests() {
 		System.out.println("\nQueue Tests");
 
@@ -116,32 +126,60 @@ public class ArrayBasedDataStructuresDriver {
 			a.enqueue(new Integer(i));
 		}
 		System.out.println("size: "+ a.size());
+		System.out.println("Equals test");
+		Queue b = new Queue();
+		Queue c = new Queue();
+		b.enqueue('B');
+		b.enqueue('a');
+		b.enqueue('t');
+		c.enqueue('B');
+		System.out.println("Expected result: false; Received result: " +b.equals(c));
+		c.enqueue('a');
+		c.enqueue('t');
+		System.out.println("obj b = " + b.toString());
+		System.out.println("obj c = " + c.toString());
+		System.out.println("Expected result: true; Received result: " +b.equals(c));
 	}
 
-	// private static void stackTests() {
-	// 	System.out.println("\nStack Tests");
+	// stack test section
+	private static void stackTests() {
+		System.out.println("\nStack Tests");
 	
-	// 	Stack a = new Stack();
-	// 	System.out.println("pop empty stack");
-	// 	a.pop();
-	// 	a.push('B');
-	// 	a.push('a');
-	// 	a.push('t');
-	// 	System.out.println(a.toString());
-	// 	while (a.isEmpty() == false) {
-	// 		System.out.println(a.pop());
-	// 	}
+		Stack a = new Stack();
+		System.out.println("pop empty stack");
+		a.pop();
+		a.push('B');
+		a.push('a');
+		a.push('t');
+		System.out.println(a.toString());
+		while (a.isEmpty() == false) {
+			System.out.println(a.pop());
+		}
 		
-	// 	System.out.println("pop past pushes");
-	// 	a.push('A');
-	// 	a.pop();
-	// 	a.pop();
-	// 	System.out.println("Fill past initial size");
-	// 	for (int i = 0; i < 110; i++)
-	// 	{
-	// 		a.push(new Integer(i));
-	// 	}
-	// 	System.out.println("pop last");
-	// 	System.out.println(a.pop());
-	// }
+		System.out.println("pop past pushes");
+		a.push('A');
+		a.pop();
+		a.pop();
+		System.out.println("Fill past initial size");
+		for (int i = 0; i < 110; i++)
+		{
+			a.push(new Integer(i));
+		}
+		System.out.println("pop last");
+		System.out.println(a.pop());
+
+		System.out.println("Equals test");
+		Stack b = new Stack();
+		Stack c = new Stack();
+		b.push("B");
+		b.push("a");
+		b.push("t");
+		c.push("B");
+		System.out.println("Expected result: false; Received result: " +b.equals(c));
+		c.push("a");
+		c.push("t");
+		System.out.println("obj b = " + b.toString());
+		System.out.println("obj c = " + c.toString());
+		System.out.println("Expected result: true; Received result: " +b.equals(c));
+	}
 }
