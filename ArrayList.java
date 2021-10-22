@@ -68,7 +68,13 @@ public class ArrayList {
 
     // get method to return the object at the given index
     public Object get(int index) {
-        return obj[index];
+        // return obj[index];
+        if(index > obj.length) {
+            System.out.println("Index out of bounds");
+            return null; 
+        } else {
+            return obj[index];
+        }
     }
 
 

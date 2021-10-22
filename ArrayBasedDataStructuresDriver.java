@@ -14,9 +14,9 @@ it handles taking in data and using methods from other classes to sort through t
 public class ArrayBasedDataStructuresDriver {
 	// Uncomment each of the methods whenever you are ready to run each test
 	public static void main(String[] args) {
-		// arrayListTests();
+		arrayListTests();
 		// queueTests();
-		stackTests();	
+		// stackTests();	
 		
 	}
 
